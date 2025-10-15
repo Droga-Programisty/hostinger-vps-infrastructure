@@ -31,8 +31,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/${{ secrets.USERNAME }}/infrastructure
-            docker compose -f docker-compose.prod.yml down
-            mv docker-compose.yml docker-compose.prod.yml
-            docker compose -f docker-compose.prod.yml pull
-            docker compose -f docker-compose.prod.yml up -d --remove-orphans
+            docker compose up -d --pull --remove-orphans
 
