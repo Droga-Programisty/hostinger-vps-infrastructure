@@ -31,5 +31,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/${{ secrets.USERNAME }}/infrastructure
-            docker compose up -d --pull --remove-orphans
+            docker compose up -d --remove-orphans
 
