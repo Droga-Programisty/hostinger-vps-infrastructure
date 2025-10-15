@@ -12,13 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Create folder if not exists
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: mkdir -p "/home/${{ secrets.USERNAME }}/infrastructure"
+      # - name: Create folder if not exists
+      #   uses: appleboy/ssh-action@v1
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     script: mkdir -p "/home/${{ secrets.USERNAME }}/infrastructure"
 
       - name: Copy docker-compose to VPS
         uses: appleboy/scp-action@v1
